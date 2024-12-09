@@ -10,8 +10,8 @@ dataset = Dataset.from_dict(data)
 tokenizer = AutoTokenizer.from_pretrained("gpt2")
 
 # Step 2.3: Tokenize the dataset
-def tokenize_function(examples):
-    return tokenizer(examples["text"], padding="max_length", truncation=True, max_length=128)
+def tokenize_function():
+    return tokenizer(data, padding="max_length", truncation=True, max_length=20)
 
 # Apply the tokenizer to the dataset
 tokenized_dataset = dataset.map(tokenize_function, batched=True)
