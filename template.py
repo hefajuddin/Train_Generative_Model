@@ -11,7 +11,8 @@ listOfFiles=[
     f"data/collator.py",
     ".env",
     "config.py",
-    "requirements.txt"
+    "requirements.txt",
+    "app.py"
 ]
 
 for path in listOfFiles:

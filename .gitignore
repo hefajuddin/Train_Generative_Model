@@ -1,3 +1,7 @@
+# Ignore the trained model
+fine_tuned_gpt/
+gpt_model/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
