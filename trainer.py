@@ -27,7 +27,7 @@ trainer = Trainer(
     data_collator=data_collator
 )
 
-# trainer.train()
+trainer.train()
 
 # Save the fine-tuned model
 model.save_pretrained("./fine_tuned_gpt")
