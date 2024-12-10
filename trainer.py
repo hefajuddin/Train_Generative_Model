@@ -1,6 +1,6 @@
 from transformers import TrainingArguments
 from transformers import Trainer
-from model import model
+from pretrained_model import model
 from data.dataset import tokenized_dataset
 from data.collator import data_collator
 from data.dataset import tokenizer
@@ -31,12 +31,11 @@ trainer.train()
 
 # Save the fine-tuned model
 model.save_pretrained("./fine_tuned_gpt")
-
 # Save the tokenizer
 tokenizer.save_pretrained("./fine_tuned_gpt")
 
 print("Model and tokenizer have been saved to './fine_tuned_gpt'")
 
-# Push to Hugging Face Hub
-model.push_to_hub("your-username/fine-tuned-gpt")
-tokenizer.push_to_hub("your-username/fine-tuned-gpt")
+# # Push to Hugging Face Hub
+# model.push_to_hub("your-username/fine-tuned-gpt")
+# tokenizer.push_to_hub("your-username/fine-tuned-gpt")
