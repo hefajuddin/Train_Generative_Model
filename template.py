@@ -4,7 +4,7 @@ import logging
 
 listOfFiles=[
     "pretrained_model.py",
-    "model.py",
+    "model_tokenize.py",
     "trainer.py",
     f"templates/index.html",
     f"data/context.py",

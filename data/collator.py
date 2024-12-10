@@ -1,4 +1,4 @@
-from model import tokenizer
+from model_tokenize import tokenizer
 from transformers import DataCollatorForLanguageModeling
 
 # Define a data collator for causal language modeling (no masking)

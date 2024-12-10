@@ -1,31 +1,17 @@
-from transformers import pipeline, AutoTokenizer, AutoModelForCausalLM
+from transformers import pipeline
 
-generator = pipeline("text-generation", model="./fine_tuned_gpt")
+def main():
+    while True:
+        data=input("Input to generate from Rapunzel story: ")
+        if data !="":
+            break
 
-# Generate text
-output = generator("Who was witch?", max_length=100, num_return_sequences=1)
+    model_name = "hefajuddin/Rapunzel_Story_Gen"
+    generator = pipeline("text-generation", model=model_name)
+    text = data
+    output = generator(text, max_length=100, num_return_sequences=1)
 
-# Print the generated text
-print(output[0]["generated_text"])
+    print("\033[92m" + output[0]["generated_text"]+ "\033[0m")
 
-
-# predefined_contexts = {
-#     "Who was lost?": "Rapunzel was lost in the forest and could not find her way back to the tower.",
-#     # Add more questions and contexts
-# }
-
-# question = "Who was lost?"
-# context = predefined_contexts.get(question, "")
-
-# if context:
-#     from transformers import pipeline
-
-#     # Load the fine-tuned QA model
-#     qa_pipeline = pipeline("question-answering", model="./fine_tuned_gpt", tokenizer="./fine_tuned_gpt")
-
-#     # Get the answer
-#     output = qa_pipeline(question=question, context=context)
-
-#     print(f"Answer: {output['answer']}")
-# else:
-#     print("No relevant context found for the question.")
+if __name__ == "__main__":
+    main()
