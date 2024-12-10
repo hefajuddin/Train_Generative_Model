@@ -1,9 +1,9 @@
 from transformers import TrainingArguments
 from transformers import Trainer
 from pretrained_model import model
-from data.dataset import tokenized_dataset
+from model import tokenized_dataset
 from data.collator import data_collator
-from data.dataset import tokenizer
+from model import tokenizer
 
 # Define training arguments
 training_args = TrainingArguments(
