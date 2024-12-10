@@ -13,7 +13,8 @@ listOfFiles=[
     ".env",
     "config.py",
     "requirements.txt",
-    "app.py"
+    "app.py",
+    "upload.py"
 ]
 
 for path in listOfFiles:

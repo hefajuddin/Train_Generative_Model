@@ -1,17 +1,31 @@
 from transformers import pipeline, AutoTokenizer, AutoModelForCausalLM
 
-# # Load the tokenizer and model from the fine_tuned_gpt folder
-# tokenizer = AutoTokenizer.from_pretrained("./fine_tuned_gpt")
-# model = AutoModelForCausalLM.from_pretrained("./fine_tuned_gpt", weights_format="safetensors")
-
-
 generator = pipeline("text-generation", model="./fine_tuned_gpt")
 
-# # Initialize the pipeline
-# generator = pipeline("text-generation", model=model, tokenizer=tokenizer)
-
 # Generate text
-output = generator("Tell me about Bangladeshi stock market,", max_length=50, num_return_sequences=1)
+output = generator("Who was witch?", max_length=100, num_return_sequences=1)
 
 # Print the generated text
 print(output[0]["generated_text"])
+
+
+# predefined_contexts = {
+#     "Who was lost?": "Rapunzel was lost in the forest and could not find her way back to the tower.",
+#     # Add more questions and contexts
+# }
+
+# question = "Who was lost?"
+# context = predefined_contexts.get(question, "")
+
+# if context:
+#     from transformers import pipeline
+
+#     # Load the fine-tuned QA model
+#     qa_pipeline = pipeline("question-answering", model="./fine_tuned_gpt", tokenizer="./fine_tuned_gpt")
+
+#     # Get the answer
+#     output = qa_pipeline(question=question, context=context)
+
+#     print(f"Answer: {output['answer']}")
+# else:
+#     print("No relevant context found for the question.")
