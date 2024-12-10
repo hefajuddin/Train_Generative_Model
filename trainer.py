@@ -37,6 +37,6 @@ tokenizer.save_pretrained("./fine_tuned_gpt")
 
 print("Model and tokenizer have been saved to './fine_tuned_gpt'")
 
-# # Push to Hugging Face Hub
-# model.push_to_hub("your-username/fine-tuned-gpt")
-# tokenizer.push_to_hub("your-username/fine-tuned-gpt")
+# Push to Hugging Face Hub
+model.push_to_hub("your-username/fine-tuned-gpt")
+tokenizer.push_to_hub("your-username/fine-tuned-gpt")

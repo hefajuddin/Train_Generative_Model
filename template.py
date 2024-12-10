@@ -3,6 +3,7 @@ from pathlib import Path
 import logging
 
 listOfFiles=[
+    "pretrained_model.py",
     "model.py",
     "trainer.py",
     f"templates/index.html",

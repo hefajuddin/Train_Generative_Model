@@ -15,7 +15,7 @@ if tokenizer.pad_token is None:
 
 # Step 2.3: Tokenize the dataset
 def tokenize_function(examples):
-    return tokenizer(examples["text"], padding="max_length", truncation=True, max_length=10)
+    return tokenizer(examples["text"], padding="max_length", truncation=True, max_length=50)
 
 # Apply the tokenizer to the dataset
 tokenized_dataset = dataset.map(tokenize_function, batched=True)
