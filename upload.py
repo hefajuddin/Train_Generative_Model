@@ -9,8 +9,8 @@ repo_id = "hefajuddin/Rapunzel_Story_Gen"  # Format: <username>/<repo_name>
 api.create_repo(repo_id=repo_id, token="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")
 
 # Load the model and tokenizer (optional if already in memory)
-model = AutoModelForCausalLM.from_pretrained("./fine_tuned_gpt")
-tokenizer = AutoTokenizer.from_pretrained("./fine_tuned_gpt")
+model = AutoModelForCausalLM.from_pretrained("./fine_tuned_llama")
+tokenizer = AutoTokenizer.from_pretrained("./fine_tuned_llama")
 
 # Push the model and tokenizer to the Hugging Face Hub
 model.push_to_hub(repo_id, token="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")

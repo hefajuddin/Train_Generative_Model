@@ -2,7 +2,7 @@ from data.dataset import dataset
 from transformers import AutoTokenizer
 
 # Load a pre-trained GPT tokenizer
-tokenizer = AutoTokenizer.from_pretrained("gpt2")
+tokenizer = AutoTokenizer.from_pretrained("meta-llama/Llama-2-7b-hf")
 
 # Assign a padding token
 if tokenizer.pad_token is None:

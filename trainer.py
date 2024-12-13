@@ -1,13 +1,13 @@
 from transformers import TrainingArguments
 from transformers import Trainer
 from pretrained_model import model
-from model import tokenized_dataset
+from model_tokenize import tokenized_dataset
 from data.collator import data_collator
-from model import tokenizer
+from model_tokenize import tokenizer
 
 # Define training arguments
 training_args = TrainingArguments(
-    # output_dir="./gpt_model",       # Directory to save the model
+    output_dir="./llama_model",       # Directory to save the model
     overwrite_output_dir=True,     
     num_train_epochs=3,            # Number of epochs
     per_device_train_batch_size=2, # Batch size per GPU
@@ -25,11 +25,13 @@ trainer = Trainer(
     data_collator=data_collator
 )
 
+print('0000')
+trainer.train()
+# Save the fine-tuned model
+print('1111')
+model.save_pretrained("./fine_tuned_llama")
+# Save the tokenizer
+print('2222')
+tokenizer.save_pretrained("./fine_tuned_llama")
 
-# trainer.train()
-# # Save the fine-tuned model
-# model.save_pretrained("./fine_tuned_gpt")
-# # Save the tokenizer
-# tokenizer.save_pretrained("./fine_tuned_gpt")
-
-# print("Model and tokenizer have been saved to './fine_tuned_gpt'")
+print("Model and tokenizer have been saved to './fine_tuned_llama'")
